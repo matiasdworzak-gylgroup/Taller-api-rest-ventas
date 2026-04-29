@@ -15,7 +15,7 @@ public class ClienteServiceImpl implements ClienteService {
 
     private ClienteRepository clienteRepository;
 
-    public ClienteServiceImpl (ClienteRepository clienteRepository){
+    public ClienteServiceImpl(ClienteRepository clienteRepository){
         this.clienteRepository = clienteRepository;
     }
 

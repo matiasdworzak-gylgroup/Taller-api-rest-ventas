@@ -15,7 +15,7 @@ import lombok.Setter;
 public class TipoProducto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_tipo_producto;
 
     @Column(nullable = false, length =100)

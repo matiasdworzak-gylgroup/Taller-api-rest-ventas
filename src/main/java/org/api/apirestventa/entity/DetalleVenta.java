@@ -17,7 +17,7 @@ import java.util.Date;
 @Table(name="Detalle_ventas")
 public class DetalleVenta {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_detalle_venta;
 
     @Column(nullable = false)

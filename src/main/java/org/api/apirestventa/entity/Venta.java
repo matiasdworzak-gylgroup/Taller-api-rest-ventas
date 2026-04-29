@@ -18,7 +18,7 @@ import java.util.List;
 @Table(name="Ventas")
 public class Venta {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_venta;
 
     @Column(nullable = false, length =100)
