@@ -19,10 +19,10 @@ import java.util.List;
 public class Venta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_venta;
+    private Long idVenta;
 
     @Column(nullable = false, length =100)
-    private Date fecha_venta;
+    private Date fechaVenta;
 
     @Column(nullable = false)
     private BigDecimal total;
@@ -32,6 +32,6 @@ public class Venta {
     private Cliente cliente;
 
     @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL)
-    private List<DetalleVenta> detalle_ventas;
+    private List<DetalleVenta> detalleVentas;
 
 }

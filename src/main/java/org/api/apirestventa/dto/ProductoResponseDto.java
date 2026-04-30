@@ -8,5 +8,5 @@ public record ProductoResponseDto(
         BigDecimal precio,
         int stock,
         Long idTipoProducto,
-        String nombreTipoProducto // Sumamos esto para que el Front no tenga que adivinar qué es el ID
+        String nombreTipoProducto
 ) {}

@@ -1,7 +1,7 @@
 package org.api.apirestventa.dto;
 
 public record ClienteResponseDto(
-        Long id_cliente,
+        Long idCliente,
         String nombre,
         String apellido,
         String correo,

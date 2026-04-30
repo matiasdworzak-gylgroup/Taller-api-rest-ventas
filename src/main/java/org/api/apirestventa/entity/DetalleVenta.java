@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 @Entity
 @Getter
@@ -18,13 +17,13 @@ import java.util.Date;
 public class DetalleVenta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_detalle_venta;
+    private Long IdDetalleVenta;
 
     @Column(nullable = false)
     private int cantidad;
 
     @Column(nullable = false)
-    private BigDecimal precio_unitario;
+    private BigDecimal precioUnitario;
 
     @Column(nullable = false)
     private BigDecimal subtotal;

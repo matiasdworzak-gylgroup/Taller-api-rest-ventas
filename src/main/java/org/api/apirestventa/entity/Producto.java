@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_producto;
+    private Long idProducto;
 
     @Column(nullable = false, length =100)
     private String nombre;
