@@ -1,8 +1,6 @@
 package org.api.apirestventa.entity;
 
-
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,26 +11,16 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="Clientes")
-public class Cliente {
+@Table(name="Tipo_Productos")
+public class TipoProducto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCliente;
+    private Long idTipoProducto;
 
     @Column(nullable = false, length =100)
     private String nombre;
 
     @Column(nullable = false, length =100)
-    private String apellido;
-
-    @Column(nullable = false, length =100)
-    private String correo;
-
-    @Column(nullable = false, length =100)
-    private String telefono;
-
-    @Column(nullable = false, length =100)
-    private String direccion;
-
+    private String descripcion;
 }
