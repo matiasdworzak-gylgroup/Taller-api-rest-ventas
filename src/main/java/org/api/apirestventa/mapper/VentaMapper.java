@@ -21,7 +21,7 @@ public class VentaMapper {
                 venta.getIdVenta(),
                 venta.getFechaVenta(),
                 venta.getTotal(),
-                venta.getIdVenta(),
+                venta.getCliente().getIdCliente(),
                 venta.getDetalleVentas().stream()
                         .map(DetalleVentaMapper::toResponseDto)
                         .toList()

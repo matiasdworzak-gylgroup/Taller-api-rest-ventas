@@ -8,4 +8,7 @@ import java.util.List;
 
 public interface VentaService {
     VentaResponseDto crear(VentaRequestDto dto);
+    List<VentaResponseDto> listar();
+    VentaResponseDto buscarPorId(Long id);
+    List<VentaResponseDto> buscarVentasPorClienteId(Long idCliente);
 }

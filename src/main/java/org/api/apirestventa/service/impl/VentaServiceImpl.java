@@ -49,17 +49,14 @@ public class VentaServiceImpl implements VentaService {
 
         List<DetalleVenta> detalles = dto.detalles().stream()
                 .map(detalleDto -> {
-                    // Mapeamos el DTO a Entidad (cantidad)
                     DetalleVenta detalle = DetalleVentaMapper.toEntity(detalleDto);
                     if (detalle.getCantidad() < 1) {
                         throw new ErrorGenericoException("La cantidad tiene que ser mayor a 0");
                     }
 
-                    // Buscamos el producto real para obtener precio y nombre
                     Producto producto = productoRepository.findById(detalleDto.idProducto())
                             .orElseThrow(() -> new RecursoNoEncontradosException("Producto no encontrado"));
 
-                    // Seteamos lo que falta que no viene en el DTO
                     if (detalle.getCantidad() > producto.getStock()) {
                         throw new ProductoFaltanteDeStockException("El producto no cuenta con el stock suficiente para hacer esta compra");
                     }
@@ -67,7 +64,6 @@ public class VentaServiceImpl implements VentaService {
                     detalle.setPrecioUnitario(producto.getPrecio());
                     detalle.setSubtotal(producto.getPrecio().multiply(BigDecimal.valueOf(detalle.getCantidad())));
                     producto.setStock(producto.getStock()-detalle.getCantidad());
-                    // ¡IMPORTANTE! Vinculamos el detalle con la venta padre
                     detalle.setVenta(nuevaVenta);
 
                     return detalle;
@@ -80,6 +76,25 @@ public class VentaServiceImpl implements VentaService {
         Venta ventaGuardada = ventaRepository.save(nuevaVenta);
 
         return VentaMapper.toResponseDto(ventaGuardada);
+    }
+
+    @Override
+    public List<VentaResponseDto> listar() {
+            return ventaRepository.findAll().stream().
+                    map(VentaMapper::toResponseDto).toList();
+    }
+
+    @Override
+    public VentaResponseDto buscarPorId(Long id) {
+        return ventaRepository.findById(id).map(VentaMapper::toResponseDto)
+                .orElseThrow(() -> new RecursoNoEncontradosException("No se encontro venta para este id"));
+    }
+
+    @Override
+    public List<VentaResponseDto> buscarVentasPorClienteId(Long idCliente) {
+        System.out.println("Buscando ventas para el cliente: " + idCliente);
+        return ventaRepository.findByCliente_IdCliente(idCliente)
+        .stream().map(VentaMapper::toResponseDto).toList();
     }
 
     private BigDecimal getTotalVenta(List<DetalleVenta>detalles){
