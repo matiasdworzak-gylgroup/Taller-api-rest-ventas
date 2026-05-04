@@ -17,7 +17,7 @@ public class TipoProductoMapper {
 
     public static TipoProductoResponseDto toResponseDto(TipoProducto tipoProducto) {
         return new TipoProductoResponseDto(
-                tipoProducto.getId_tipo_producto(),
+                tipoProducto.getIdTipoProducto(),
                 tipoProducto.getNombre(),
                 tipoProducto.getDescripcion()
         );

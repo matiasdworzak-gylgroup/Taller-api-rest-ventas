@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class Venta {
     private Long idVenta;
 
     @Column(nullable = false, length =100)
-    private Date fechaVenta;
+    private LocalDateTime fechaVenta;
 
     @Column(nullable = false)
     private BigDecimal total;
