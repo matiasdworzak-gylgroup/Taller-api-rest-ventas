@@ -1,4 +1,4 @@
-package org.api.apirestventa.dto;
+package org.api.apirestventa.dto.responseDto;
 
 public record ClienteResponseDto(
         Long idCliente,

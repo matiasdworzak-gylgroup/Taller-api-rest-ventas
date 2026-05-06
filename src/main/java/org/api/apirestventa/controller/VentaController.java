@@ -1,9 +1,8 @@
 package org.api.apirestventa.controller;
 
 import jakarta.validation.Valid;
-import org.api.apirestventa.dto.ProductoResponseDto;
-import org.api.apirestventa.dto.VentaRequestDto;
-import org.api.apirestventa.dto.VentaResponseDto;
+import org.api.apirestventa.dto.requestDto.VentaRequestDto;
+import org.api.apirestventa.dto.responseDto.VentaResponseDto;
 import org.api.apirestventa.service.VentaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

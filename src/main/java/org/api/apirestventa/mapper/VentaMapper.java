@@ -1,10 +1,8 @@
 package org.api.apirestventa.mapper;
 
-import org.api.apirestventa.dto.VentaRequestDto;
-import org.api.apirestventa.dto.VentaResponseDto;
+import org.api.apirestventa.dto.requestDto.VentaRequestDto;
+import org.api.apirestventa.dto.responseDto.VentaResponseDto;
 import org.api.apirestventa.entity.Venta;
-
-import java.util.stream.Collectors;
 
 public class VentaMapper {
 

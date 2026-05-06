@@ -1,6 +1,5 @@
-package org.api.apirestventa.dto;
+package org.api.apirestventa.dto.requestDto;
 
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 

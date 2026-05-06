@@ -1,8 +1,7 @@
-package org.api.apirestventa.dto;
+package org.api.apirestventa.dto.responseDto;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 public record VentaResponseDto(

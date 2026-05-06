@@ -1,7 +1,7 @@
 package org.api.apirestventa.mapper;
 
-import org.api.apirestventa.dto.DetalleVentaRequestDto;
-import org.api.apirestventa.dto.DetalleVentaResponseDto;
+import org.api.apirestventa.dto.requestDto.DetalleVentaRequestDto;
+import org.api.apirestventa.dto.responseDto.DetalleVentaResponseDto;
 import org.api.apirestventa.entity.DetalleVenta;
 
 public class DetalleVentaMapper {

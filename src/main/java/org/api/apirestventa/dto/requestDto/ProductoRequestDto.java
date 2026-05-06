@@ -1,4 +1,4 @@
-package org.api.apirestventa.dto;
+package org.api.apirestventa.dto.requestDto;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;

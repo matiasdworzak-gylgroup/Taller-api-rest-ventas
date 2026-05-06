@@ -1,7 +1,7 @@
 package org.api.apirestventa.mapper;
 
-import org.api.apirestventa.dto.TipoProductoRequestDto;
-import org.api.apirestventa.dto.TipoProductoResponseDto;
+import org.api.apirestventa.dto.requestDto.TipoProductoRequestDto;
+import org.api.apirestventa.dto.responseDto.TipoProductoResponseDto;
 import org.api.apirestventa.entity.TipoProducto;
 
 public class TipoProductoMapper {

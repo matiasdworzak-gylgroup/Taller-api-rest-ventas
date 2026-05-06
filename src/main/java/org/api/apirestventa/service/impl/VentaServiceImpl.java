@@ -1,8 +1,8 @@
 package org.api.apirestventa.service.impl;
 
 import jakarta.transaction.Transactional;
-import org.api.apirestventa.dto.VentaRequestDto;
-import org.api.apirestventa.dto.VentaResponseDto;
+import org.api.apirestventa.dto.requestDto.VentaRequestDto;
+import org.api.apirestventa.dto.responseDto.VentaResponseDto;
 import org.api.apirestventa.entity.Cliente;
 import org.api.apirestventa.entity.DetalleVenta;
 import org.api.apirestventa.entity.Producto;
@@ -20,13 +20,12 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static java.util.stream.Collectors.toList;
-
 @Service
 public class VentaServiceImpl implements VentaService {
    private ClienteRepository clienteRepository;
    private ProductoRepository productoRepository;
    private VentaRepository ventaRepository;
+
 
    public VentaServiceImpl(ClienteRepository clienteRepository, ProductoRepository productoRepository, VentaRepository ventaRepository ){
        this.clienteRepository = clienteRepository;
@@ -36,11 +35,6 @@ public class VentaServiceImpl implements VentaService {
     @Transactional
     @Override
     public VentaResponseDto crear(VentaRequestDto dto) {
-        //Validar:
-        //Cliente existe Listo
-        //Productos tienen stock Listo
-        //Lista de detalle venta no esta vacia Listo
-        //Productos existen en la dbS Listo
         Venta nuevaVenta = new Venta();
 
         Cliente clienteEncontrado = clienteRepository.findById(dto.idCliente()).
@@ -92,7 +86,6 @@ public class VentaServiceImpl implements VentaService {
 
     @Override
     public List<VentaResponseDto> buscarVentasPorClienteId(Long idCliente) {
-        System.out.println("Buscando ventas para el cliente: " + idCliente);
         return ventaRepository.findByCliente_IdCliente(idCliente)
         .stream().map(VentaMapper::toResponseDto).toList();
     }

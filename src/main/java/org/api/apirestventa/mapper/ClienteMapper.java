@@ -1,7 +1,7 @@
 package org.api.apirestventa.mapper;
 
-import org.api.apirestventa.dto.ClienteRequestDto;
-import org.api.apirestventa.dto.ClienteResponseDto;
+import org.api.apirestventa.dto.requestDto.ClienteRequestDto;
+import org.api.apirestventa.dto.responseDto.ClienteResponseDto;
 import org.api.apirestventa.entity.Cliente;
 
 public class ClienteMapper {

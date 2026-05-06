@@ -1,8 +1,7 @@
 package org.api.apirestventa.service;
 
-import org.api.apirestventa.dto.DetalleVentaResponseDto;
-import org.api.apirestventa.dto.VentaRequestDto;
-import org.api.apirestventa.dto.VentaResponseDto;
+import org.api.apirestventa.dto.requestDto.VentaRequestDto;
+import org.api.apirestventa.dto.responseDto.VentaResponseDto;
 
 import java.util.List;
 

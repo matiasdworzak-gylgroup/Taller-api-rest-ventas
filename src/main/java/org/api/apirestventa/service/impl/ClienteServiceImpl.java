@@ -1,7 +1,7 @@
 package org.api.apirestventa.service.impl;
 
-import org.api.apirestventa.dto.ClienteRequestDto;
-import org.api.apirestventa.dto.ClienteResponseDto;
+import org.api.apirestventa.dto.requestDto.ClienteRequestDto;
+import org.api.apirestventa.dto.responseDto.ClienteResponseDto;
 import org.api.apirestventa.entity.Cliente;
 import org.api.apirestventa.exception.RecursoNoEncontradosException;
 import org.api.apirestventa.mapper.ClienteMapper;

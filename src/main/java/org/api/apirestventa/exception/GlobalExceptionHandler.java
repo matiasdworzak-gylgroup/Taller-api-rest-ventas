@@ -1,5 +1,5 @@
 package org.api.apirestventa.exception;
-import org.api.apirestventa.dto.ErrorResponse;
+import org.api.apirestventa.dto.responseDto.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 

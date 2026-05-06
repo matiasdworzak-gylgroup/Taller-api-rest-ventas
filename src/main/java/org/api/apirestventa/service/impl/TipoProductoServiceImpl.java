@@ -1,7 +1,7 @@
 package org.api.apirestventa.service.impl;
 
-import org.api.apirestventa.dto.TipoProductoRequestDto;
-import org.api.apirestventa.dto.TipoProductoResponseDto;
+import org.api.apirestventa.dto.requestDto.TipoProductoRequestDto;
+import org.api.apirestventa.dto.responseDto.TipoProductoResponseDto;
 import org.api.apirestventa.entity.TipoProducto;
 import org.api.apirestventa.exception.RecursoNoEncontradosException;
 import org.api.apirestventa.mapper.TipoProductoMapper;

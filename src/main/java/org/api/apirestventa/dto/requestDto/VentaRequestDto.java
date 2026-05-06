@@ -1,6 +1,4 @@
-package org.api.apirestventa.dto;
-
-import org.api.apirestventa.entity.DetalleVenta;
+package org.api.apirestventa.dto.requestDto;
 
 import java.util.List;
 
