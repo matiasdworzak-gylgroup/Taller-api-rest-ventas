@@ -39,14 +39,10 @@ public class VentaServiceImpl implements VentaService {
 
         Cliente clienteEncontrado = clienteRepository.findById(dto.idCliente()).
                 orElseThrow(() -> new CienteNoEncontradoException("El cliente no esta registrado o no existe."));
-        if (dto.detalles().isEmpty()){ throw new VentaVaciaException("No se puede cargar una venta vacia");}
 
         List<DetalleVenta> detalles = dto.detalles().stream()
                 .map(detalleDto -> {
                     DetalleVenta detalle = DetalleVentaMapper.toEntity(detalleDto);
-                    if (detalle.getCantidad() < 1) {
-                        throw new ErrorGenericoException("La cantidad tiene que ser mayor a 0");
-                    }
 
                     Producto producto = productoRepository.findById(detalleDto.idProducto())
                             .orElseThrow(() -> new RecursoNoEncontradosException("Producto no encontrado"));

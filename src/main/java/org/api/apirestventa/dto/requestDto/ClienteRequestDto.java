@@ -7,7 +7,7 @@ public record ClienteRequestDto(
         @NotBlank(message = "El nombre no puede estar vacio")
         String nombre,
 
-        @NotBlank(message = "El nombre no puede estar vacio")
+        @NotBlank(message = "El apellido no puede estar vacio")
         String apellido,
 
         @Email(message = "El mail tiene que contener @ y terminar con .com")

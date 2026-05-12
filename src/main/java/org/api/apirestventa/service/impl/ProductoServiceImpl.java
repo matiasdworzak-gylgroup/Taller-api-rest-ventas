@@ -64,9 +64,8 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     public void eliminar(Long id) {
-        if (!productoRepository.existsById(id)) {
-            throw new RecursoNoEncontradosException("Producto no encontrado");
-        }
-        productoRepository.deleteById(id);
+        Producto producto = productoRepository.findById(id)
+                .orElseThrow(() -> new RecursoNoEncontradosException("Producto no encontrado"));
+        productoRepository.delete(producto);
     }
 }

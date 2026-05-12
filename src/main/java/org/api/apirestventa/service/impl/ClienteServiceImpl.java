@@ -10,6 +10,8 @@ import org.api.apirestventa.service.ClienteService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class ClienteServiceImpl implements ClienteService {
 
@@ -69,7 +71,9 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public List<ClienteResponseDto> buscarPorNombre(String nombre) {
-        return clienteRepository.findByNombre(nombre)
+        return Optional.of(clienteRepository.findByNombre(nombre))
+                .filter(lista -> !lista.isEmpty())
+                .orElseThrow(() -> new RecursoNoEncontradosException("No se encontraron clientes"))
                 .stream()
                 .map(ClienteMapper::toResponseDto)
                 .toList();
